@@ -1,4 +1,4 @@
-const serverUrl = 'https://your-server-url.com/register'; // Replace with actual URL
+const serverUrl = 'https://edd3a51f055e.ngrok-free.app/register'; // Replace with actual URL
 
 document.getElementById('subscribe').addEventListener('click', async () => {
   const classId = document.getElementById('class').value;

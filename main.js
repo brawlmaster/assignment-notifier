@@ -13,7 +13,7 @@ document.getElementById('subscribe').addEventListener('click', async () => {
 
   const subscription = await reg.pushManager.subscribe({
     userVisibleOnly: true,
-    applicationServerKey: '<YOUR_PUBLIC_VAPID_KEY>'
+    applicationServerKey: 'BJ7CSXn_57DK3dsMW-570E-9Ziy7gMD-dOzimusE8x2bnbUa-aGVbF5JdirAdejSoiMvaLoRtOjbxPidY_w-XrQ'
   });
 
   await fetch(serverUrl, {

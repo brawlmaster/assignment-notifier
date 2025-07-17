@@ -27,7 +27,7 @@ document.getElementById('subscribe').addEventListener('click', async () => {
     return;
   }
 
-  const vapidPublicKey = 'BJ7CSXn_57DK3dsMW-570E-9Ziy7gMD-dOzimusE8x2bnbUa-aGVbF5JdirAdejSoiMvaLoRtOjbxPidY_w-XrQ';
+  const vapidPublicKey = 'BJ7atugHXd2PJdsiSD6EyzlcE1xEAU1GKhpLjPpeUUZTCKO8lAXzufwHyfLvWz6MTgx-EBQJVEE6ZXG2rq3R9TM';
   const convertedVapidKey = urlBase64ToUint8Array(vapidPublicKey);
 
   const subscription = await reg.pushManager.subscribe({

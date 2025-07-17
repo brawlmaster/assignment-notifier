@@ -23,7 +23,7 @@ document.getElementById('subscribe').addEventListener('click', async () => {
 
   const permission = await Notification.requestPermission();
   if (permission !== 'granted') {
-    alert('Notification permission is required!');
+    alert('알림 권한이 필요합니다.');
     return;
   }
 
@@ -44,5 +44,27 @@ document.getElementById('subscribe').addEventListener('click', async () => {
     })
   });
 
-  alert('Subscribed successfully!');
+  alert('성곡적으로 가입하였습니다.');
+});
+document.getElementById('unsubscribe').addEventListener('click', async () => {
+  const reg = await navigator.serviceWorker.ready;
+
+  const subscription = await reg.pushManager.getSubscription();
+  if (subscription) {
+    const success = await subscription.unsubscribe();
+    if (success) {
+      alert("알림 미수신 완료");
+
+      // 서버에서도 subscription 제거 요청 (선택)
+      await fetch('https://shortly-allowing-stinkbug.ngrok-free.app/unregister', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ endpoint: subscription.endpoint })
+      });
+    } else {
+      alert("탈퇴 실패, 다시 시도해주세요.");
+    }
+  } else {
+    alert("퇄퇴 성공.");
+  }
 });

@@ -1,4 +1,4 @@
-const serverUrl = 'https://bd97ed9c165a.ngrok-free.app/register';
+const serverUrl = 'https://shortly-allowing-stinkbug.ngrok-free.app/register';
 
 // 유틸: base64 문자열 → Uint8Array 변환 함수
 function urlBase64ToUint8Array(base64String) {
